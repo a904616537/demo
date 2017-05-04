@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width,height=device-height, user-scalable=no,initial-scale=1, minimum-scale=1, maximum-scale=1">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+        <meta http-equiv="Window-target"content="_top">
+        <link rel="stylesheet" type="text/css" href="/css/normalize.css">
+        <link rel="stylesheet" type="text/css" href="/css/barrager.css">
+        <link rel="stylesheet" type="text/css" href="/css/style.css">
+        <title>demo</title>
+    </head>
+    <body>
+
+		<script type="text/javascript" src="/js/jquery.min.js"></script>
+		<script type="text/javascript" src="/js/jquery.barrager.min.js"></script>
+		<script src="https://cdn.bootcss.com/socket.io/1.7.3/socket.io.min.js"></script>
+		
+		<script type="text/javascript">
+				var window_height=$(window).height() - 150;
+
+				var socket = io('http://bf148f6c.ngrok.io');
+				socket.on('connect', function(){
+					console.log('弹幕socket链接成功'); 
+				});
+				socket.on('effects', function(subtext) {
+					console.log('subtext', subtext)
+					var bottom = Math.floor(Math.random() * window_height + 40);
+					var item = {
+						info         : subtext, //文字
+						close        : false, //显示关闭按钮 
+						speed        : 3, //延迟,单位秒,默认6 
+						bottom       : bottom, //距离底部高度,单位px,默认随机 
+						color        : '#fff', //颜色,默认白色 
+						old_ie_color : '#000', //ie低版兼容色,不能与网页背景相同,默认黑色 
+					 }
+					$('body').barrager(item);
+				});
+			
+		</script>
+		
+    </body>
+</html>
