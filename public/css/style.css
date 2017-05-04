@@ -3,27 +3,41 @@ body {
 	font-family : -apple-system, SF UI Text, Helvetica Neue,Helvetica, Arial, sans-serif;
 	text-align  : center;
 	font-size   : 14px;
+	background  : url('/img/event_bg.jpg') top center;
 }
-input {
-	border        : 1px solid #eee;
-	outline       : none;
-	padding       : 5px 10px;
-	border-radius : 5px;
-	width         : 250px;
-	line-height   : 24px;
+label{
+	background-color: #fff;
+	padding: 7px 10px;
+	color: #ed7612;
+	font-size: 18px;
+	border: 1px solid #eee;
 }
 button{
+	margin: 5px;
 	outline          : none;
 	border           : none;
 	background-color : #ed7612;
 	color            : #fff;
-	line-height      : 30px;
+	line-height      : 35px;
 	width            : 200px;
 	border-radius    : .27em;
+	font-size        : 14px;
 }
 .container {
-	margin : 150px 50px;
+	margin : 200px 50px 100px;
+}
+.container p{
+	line-height: 40px;
+	font-size: 18px;
+	color: #fff;
 }
 .content {
 	margin : 0px 50px;
+}
+
+.welcome{
+	display    : block;
+	font-size  : 18px;
+	margin-top : 300px;
+	color      : #fff;
 }

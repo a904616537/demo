@@ -24,7 +24,7 @@ const wechat = new webLogin({
 // })
 
 
-router.route('/')
+router.route('/home')
 .get((req, res) => {
 	var user = req.session.user;
 	res.render('home', {user})
@@ -33,6 +33,11 @@ router.route('/')
 router.route('/effects')
 .get((req, res) => {
 	res.render('effects')
+})
+
+router.route('/end')
+.get((req, res) => {
+	res.render('finish')
 })
 
 router.route('/wechat/url')

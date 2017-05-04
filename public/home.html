@@ -10,20 +10,23 @@
         <title></title>
     </head>
     <body>
-		<div class="container">
-			<input type="text" name="" placeholder="请输入你要发送的文字" id="subtext" value="">
+    	<div class="container">
+			<p>赶快发送弹幕参与我们的活动</p>
 		</div>
 		<div class="submit">
-			<button type="submit" id="submit">确定发送</button>
+			<button type="button" class="btn" ref="毕业了">毕业了</button>
+			<button type="button" class="btn" ref="混社会咯">混社会咯</button>
+			<button type="button" class="btn" ref="身体健康">身体健康</button>
+			<button type="button" class="btn" ref="万事如意">万事如意</button>
 		</div>
 
 		<script type="text/javascript" src="/js/jquery.min.js"></script>
 		<script src="https://cdn.bootcss.com/socket.io/1.7.3/socket.io.min.js"></script>
 		<script type="text/javascript">
 			var socket = io('http://demo.foowala.com');
- 			$('#submit').on('click',function() {
-
-				var subtext = $('#subtext').val();
+ 			$('.btn').on('click', function() {
+				var subtext = $(this).text();
+				console.log('submit', subtext)
  				if(subtext == '') {
 					alert('请输入要发送的文字')
 					return;
@@ -36,9 +39,11 @@
 				<% } %>
 				
 				socket.emit('message', str);
-				alert('发送成功！');
+				// location.href="/end";
 			});
 		</script>
-		
+		<style>
+		</style>
     </body>
 </html>
+
