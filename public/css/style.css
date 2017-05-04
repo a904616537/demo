@@ -24,7 +24,7 @@ button{
 	font-size        : 14px;
 }
 .container {
-	margin : 200px 50px 100px;
+	margin : 200px 50px 50px;
 }
 .container p{
 	line-height: 40px;
@@ -37,7 +37,7 @@ button{
 
 .welcome{
 	display    : block;
-	font-size  : 18px;
-	margin-top : 300px;
+	font-size  : 16px;
+	margin-top : 200px;
 	color      : #fff;
 }
